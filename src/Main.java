@@ -15,5 +15,8 @@ public class Main {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        Key stepTwo=new Key();
+        String str=stepTwo.CaesarsCode("Привіт ДРУже. Як в тебе справи?", 2);
+        System.out.println(str);
     }
 }
