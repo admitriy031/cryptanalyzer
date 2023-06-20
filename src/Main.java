@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        File file=new File("D:\\cryptanalyzer\\transcript.txt");
+       /* File file=new File("D:\\cryptanalyzer\\transcript.txt");
         System.out.println("Введіть шлях до файлу");
         try(Scanner scanner=new Scanner(System.in);
             FileReader fileReader=new FileReader(scanner.nextLine());
@@ -15,9 +15,7 @@ public class Main {
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
-        Key stepTwo=new Key();
-        String str=stepTwo.CaesarsCode("Привіт ДРУже. Як в тебе справи?", 2);
-        System.out.println(str);
+        }*/
+        new Menu().run();
     }
 }

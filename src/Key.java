@@ -1,5 +1,5 @@
 public class Key {
-    public String CaesarsCode(String text, int step) {
+    /*public String CaesarsCode(String text, int step) {
         String result="";
         char[] textChar = text.toCharArray();
         char[] lowCh = { 'а', 'б', 'в', 'г', 'ґ', 'д','е', 'є', 'ж',
@@ -33,6 +33,6 @@ public class Key {
             result += c;
         }
         return result;
-    }
+    }*/
 
 }
