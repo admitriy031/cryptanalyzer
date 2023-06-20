@@ -9,6 +9,7 @@ public class Main {
             FileReader fileReader=new FileReader(scanner.nextLine());
             FileWriter fileWriter=new FileWriter(file)){
             int c;
+            String textCode="";
             while((c=fileReader.read())!=-1){
                 fileWriter.write(c);
             }
