@@ -44,7 +44,7 @@ public class Menu {
         isRunning=false;
     }
 
-    private String fileRead(){
+    private String filePathRead(){
         Scanner readScanner=new Scanner(System.in);
         System.out.println("Enter the file path from which you want to read the text");
         String file=readScanner.nextLine();
@@ -63,7 +63,7 @@ public class Menu {
         }
         throw new FileNotFountException("File path could not be validated");
     }
-    private String fileWrite(){
+    private String filePathWrite(){
         Scanner writeScanner=new Scanner(System.in);
         System.out.println("Enter the file in which you want to write date");
         String file=writeScanner.nextLine();
