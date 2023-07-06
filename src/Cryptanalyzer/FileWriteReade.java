@@ -1,3 +1,5 @@
+package Cryptanalyzer;
+
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -5,6 +7,7 @@ import java.io.RandomAccessFile;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.charset.StandardCharsets;
 
 public class FileWriteReade {
     private String fileRead;
@@ -13,6 +16,10 @@ public class FileWriteReade {
         this.fileRead=fileRead;
         this.fileWrite=fileWrite;
     }
+
+    public FileWriteReade() {
+    }
+
     public byte[] readFile(){
         try(RandomAccessFile randomAccessFile=new RandomAccessFile(fileRead, "rw");
             FileChannel channel=randomAccessFile.getChannel();
@@ -38,7 +45,7 @@ public class FileWriteReade {
         }
     }
     public void writeFile(byte[] data){
-        try(RandomAccessFile randomAccessFile=new RandomAccessFile(fileWrite, "wr");
+        try(RandomAccessFile randomAccessFile=new RandomAccessFile(fileWrite, "rw");
             FileChannel channel=randomAccessFile.getChannel()){
             ByteBuffer bytebuffer=ByteBuffer.allocate(2048);
             int index = 0;
@@ -58,5 +65,16 @@ public class FileWriteReade {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+    public char[] bytesToChars() {
+        byte[] bytes = readFile();
+        char[] chars = new String(bytes, StandardCharsets.UTF_8).toCharArray();
+        return chars;
+    }
+
+    public byte[] charsToBytes(char[] chars) {
+        String str = new String(chars);
+        byte[] bytes = str.getBytes(StandardCharsets.UTF_8);
+        return bytes;
     }
 }
