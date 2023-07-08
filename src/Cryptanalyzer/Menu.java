@@ -30,7 +30,7 @@ public class Menu {
     private static final String INFO_ITEM_TO_ENCODE= """
             3. shift 3 to the right
             4. shift 6 to right
-            5. shift 9  to right
+            5. shift 9 to right
             """;
     private static final String INFO_ITEM_TO_DECODE= """
             6. shift 3 to the left
