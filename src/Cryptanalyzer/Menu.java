@@ -84,7 +84,7 @@ public class Menu {
             case COME_BACK_TO3 -> decipherOn3();
             case COME_BACK_TO6 -> decipherOn6();
             case COME_BACK_TO9 -> decipherOn9();
-            case BRUTE_FORCE -> new CaesarsCipher(new FileWriteReade(filePathRead(),filePathWrite())).bruteForce();
+            case BRUTE_FORCE -> bruteForce();
         }
     }
     private void decipherOn3(){
@@ -98,6 +98,10 @@ public class Menu {
     private void decipherOn9(){
         DecipherOn9 decipherOn9=new DecipherOn9((new FileWriteReade(filePathRead(),filePathWrite())));
         decipherOn9.decode(9);
+    }
+    private void bruteForce(){
+        CaesarsCipher decipheBruteForce=new CaesarsCipher(new FileWriteReade(filePathRead(), filePathWrite()));
+        decipheBruteForce.bruteForce();
     }
 
     private void itemToExit(){

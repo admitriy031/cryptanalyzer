@@ -1,5 +1,7 @@
 package Cryptanalyzer;
 
+import Cryptanalyzer.Decode.DecipherOn3;
+
 public class CaesarsCipher {
     private final FileWriteReade fileWriteReade;
     private char[] lowCh = { 'а', 'б', 'в', 'г', 'ґ', 'д','е', 'є', 'ж',
@@ -11,6 +13,7 @@ public class CaesarsCipher {
     public CaesarsCipher(FileWriteReade fileWriteReade) {
         this.fileWriteReade=fileWriteReade;
     }
+
     public void encrypt(int moveOn){
         char[] chars = fileWriteReade.bytesToChars();
 
@@ -34,6 +37,14 @@ public class CaesarsCipher {
                     chars[i] = upCh[index];
                 }
             }
+        }
+        if(moveOn==3) {
+            chars[chars.length - 1] = '#';
+        }
+        else if (moveOn==6) {
+            chars[chars.length - 1] = '*';
+        } else if (moveOn==9) {
+            chars[chars.length - 1] = '$';
         }
         byte[] encryptedBytes = fileWriteReade.charsToBytes(chars);
         fileWriteReade.writeFile(encryptedBytes);
@@ -65,8 +76,19 @@ public class CaesarsCipher {
         }
         byte[] decipherBytes = fileWriteReade.charsToBytes(chars);
         fileWriteReade.writeFile(decipherBytes);
-    }
-    public void bruteForce(){
 
+    }
+    public void bruteForce() {
+        char decipher3 = '#';
+        char decipher6 = '*';
+        char decipher9 = '$';
+        char[] chars = fileWriteReade.bytesToChars();
+        if(chars[chars.length-1]=='#'){
+            decode(3);
+        } else if (chars[chars.length-1]=='*') {
+            decode(6);
+        } else if (chars[chars.length-1]=='$') {
+            decode(9);
+        }
     }
 }
