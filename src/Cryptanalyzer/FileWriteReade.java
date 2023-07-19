@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 public class FileWriteReade {
     private String fileRead;
     private String fileWrite;
+
     public FileWriteReade(String fileRead, String fileWrite){
         this.fileRead=fileRead;
         this.fileWrite=fileWrite;
@@ -44,6 +45,7 @@ public class FileWriteReade {
             throw new RuntimeException(e);
         }
     }
+
     public void writeFile(byte[] data){
         try(RandomAccessFile randomAccessFile=new RandomAccessFile(fileWrite, "rw");
             FileChannel channel=randomAccessFile.getChannel()){
@@ -66,6 +68,7 @@ public class FileWriteReade {
             throw new RuntimeException(e);
         }
     }
+
     public char[] bytesToChars() {
         byte[] bytes = readFile();
         char[] chars = new String(bytes, StandardCharsets.UTF_8).toCharArray();
