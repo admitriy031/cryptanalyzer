@@ -1,7 +1,6 @@
 package Cryptanalyzer;
 
-import java.io.*;
-import java.util.Scanner;
+import Cryptanalyzer.Console_Menu.Menu;
 
 public class Main {
     public static void main(String[] args) {

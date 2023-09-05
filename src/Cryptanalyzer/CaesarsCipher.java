@@ -79,9 +79,6 @@ public class CaesarsCipher {
 
     }
     public void bruteForce() {
-        char decipher3 = '#';
-        char decipher6 = '*';
-        char decipher9 = '$';
         char[] chars = fileWriteReade.bytesToChars();
         if(chars[chars.length-1]=='#'){
             decode(3);
